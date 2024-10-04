@@ -1,0 +1,48 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+  height: 100%;
+  background: var(--background-gradient);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.form > h1 {
+  align-self: flex-start;
+}
+
+.form > p {
+  text-wrap: wrap;
+}
+
+.input-wrapper {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.input-wrapper > label {
+  margin-left: 10px;
+  color: gray;
+}
+
+.input-wrapper > input {
+  font-size: 20px;
+  padding: 10px 20px;
+  border-radius: 30px;
+  border: 2px solid lightgray;
+}
+
+.input-wrapper > input:focus {
+  outline: none;
+  border: 2px solid gray;
+  transition: border 150ms ease-in;
+}

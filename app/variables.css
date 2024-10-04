@@ -1,0 +1,5 @@
+:root {
+  --background-gradient-start: #ff67c0;
+  --background-gradient-end: #ffb2df;
+  --background-gradient: linear-gradient(to bottom, #ffb2df 0%, #ff67c0 100%);
+}
