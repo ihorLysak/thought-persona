@@ -1,8 +1,6 @@
 export const metadata = {
   title: "ThoughtPersona",
 };
-import "./globals.css";
-import "./variables.css";
 
 export default function RootLayout({
   children,
