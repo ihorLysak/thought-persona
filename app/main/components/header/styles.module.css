@@ -1,0 +1,54 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 1.5rem 0rem;
+}
+
+.title {
+  color: var(--white);
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: color 100ms ease-in;
+}
+
+.title:hover {
+  color: rgb(240, 240, 240);
+  transition: color 100ms ease-in;
+}
+
+.buttons-container {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+}
+
+.settings-btn {
+  color: var(--black);
+  background-color: var(--white);
+  font-size: 1.2rem;
+  font-weight: 700;
+  padding: 0.7rem 2rem;
+  border-radius: 2rem;
+  text-decoration: none;
+  transition: all 100ms ease-in;
+}
+
+.settings-btn:hover {
+  color: var(--white);
+  background-color: var(--black);
+  transition: all 100ms ease-in;
+}
+
+.settings-btn:visited {
+  color: var(--white);
+}
+
+.avatar {
+  background-color: var(--gray);
+  height: 3.5rem;
+  width: 3.5rem;
+  border-radius: 50%;
+}

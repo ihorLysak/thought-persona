@@ -31,18 +31,18 @@
 
 .input-wrapper > label {
   margin-left: 10px;
-  color: gray;
+  color: var(--gray);
 }
 
 .input-wrapper > input {
   font-size: 20px;
   padding: 10px 20px;
   border-radius: 30px;
-  border: 2px solid lightgray;
+  border: 2px solid var(--light-gray);
 }
 
 .input-wrapper > input:focus {
   outline: none;
-  border: 2px solid gray;
+  border: 2px solid var(--gray);
   transition: border 150ms ease-in;
 }
