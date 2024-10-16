@@ -1,6 +1,6 @@
 const AppRoute = {
-  signIn: "/sign-in",
-  signUp: "/sign-up",
+  signIn: "/auth/sign-in",
+  signUp: "/auth/sign-up",
   feed: "/main/feed",
 } as const;
 

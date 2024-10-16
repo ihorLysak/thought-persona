@@ -2,6 +2,7 @@
 
 import { connectToDB } from "~/app/utils/connect-to-db";
 import User from "~/app/models/user";
+import { token } from "~/app/libs/modules/token/token";
 import bcrypt from "bcrypt";
 
 type Properties = {
@@ -25,7 +26,12 @@ const signIn = async ({ email, password }: Properties) => {
       throw new Error("Incorrect password");
     }
 
-    return { payload: targetUser._id };
+    const authToken = await token.create({
+      expirationTime: process.env.JWT_EXPIRATION as string,
+      payload: { userId: targetUser._id },
+    });
+
+    return { payload: authToken };
   } catch (error) {
     console.log(error);
   }

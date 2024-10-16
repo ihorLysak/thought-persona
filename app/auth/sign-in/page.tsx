@@ -1,28 +1,21 @@
 "use client";
 
-import { ChangeEvent, useCallback, useState } from "react";
+import { useState, useCallback, ChangeEvent } from "react";
+
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 
 import { Button } from "~/app/components/components";
 import { LocalStorageKey, AppRoute } from "~/app/libs/enums/enums";
-import { createUser } from "~/app/libs/server-actions/actions";
+import { signIn } from "~/app/libs/server-actions/actions";
 
 import styles from "./styles.module.css";
 
-const SignUp: React.FC = () => {
-  const [username, setUsername] = useState("");
+const SignIn: React.FC = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const router = useRouter();
-
-  const handleUsernameChange = useCallback(
-    (event: ChangeEvent<HTMLInputElement>) => {
-      setUsername(event.target.value);
-    },
-    []
-  );
 
   const handleEmailChange = useCallback(
     (event: ChangeEvent<HTMLInputElement>) => {
@@ -38,37 +31,29 @@ const SignUp: React.FC = () => {
     []
   );
 
-  const handleRegisterFormSubmit = useCallback(async () => {
-    const response = await createUser({ username, email, password });
+  const handleSignInFormSubmit = useCallback(async () => {
+    const response = await signIn({ email, password });
 
-    localStorage.setItem(LocalStorageKey.token, response?.payload);
+    localStorage.setItem(LocalStorageKey.token, response?.payload as string);
 
     router.push(AppRoute.feed);
-  }, [username, email, password]);
+  }, [email, password, router]);
 
   return (
     <main className={styles["container"]}>
       <form
-        action={handleRegisterFormSubmit}
+        action={handleSignInFormSubmit}
         className={`white-box ${styles["form"]}`}
       >
-        <h1>Sign Up</h1>
+        <h1>Sign in</h1>
         <p>
-          already have an account? <Link href={AppRoute.signIn}>Sign In</Link>
+          Want to create a new account?{" "}
+          <Link href={AppRoute.signUp}>Sign Up</Link>
         </p>
-        <div className={styles["input-wrapper"]}>
-          <label htmlFor="username">Username</label>
-          <input
-            type="text"
-            name="username"
-            onChange={handleUsernameChange}
-            required
-          />
-        </div>
         <div className={styles["input-wrapper"]}>
           <label htmlFor="email">Email</label>
           <input
-            type="text"
+            type="email"
             name="email"
             onChange={handleEmailChange}
             required
@@ -89,4 +74,4 @@ const SignUp: React.FC = () => {
   );
 };
 
-export default SignUp;
+export default SignIn;
