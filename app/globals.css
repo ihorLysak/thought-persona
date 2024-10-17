@@ -14,4 +14,5 @@ body {
   padding: 30px;
   border-radius: 30px;
   background-color: var(--white);
+  box-shadow: 0px 5px 25px -5px;
 }
