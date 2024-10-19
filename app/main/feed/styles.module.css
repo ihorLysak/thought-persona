@@ -3,12 +3,13 @@
   flex-grow: 1;
   gap: 3rem;
   align-items: stretch;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .feed-roll {
   display: flex;
   flex-grow: 1;
   gap: 2rem;
+  max-width: 760px;
   flex-direction: column;
 }

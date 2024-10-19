@@ -4,6 +4,7 @@ import {
   FollowingCard,
   ThemesCard,
   ThoughtsFeed,
+  NewThought,
 } from "./components/components";
 
 const Feed = () => {
@@ -11,9 +12,7 @@ const Feed = () => {
     <main className={styles["container"]}>
       <FollowingCard />
       <div className={styles["feed-roll"]}>
-        <div className="white-box">
-          <h1>New Thought</h1>
-        </div>
+        <NewThought />
         <ThoughtsFeed />
       </div>
       <ThemesCard />

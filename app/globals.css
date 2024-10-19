@@ -16,3 +16,7 @@ body {
   background-color: var(--white);
   box-shadow: 0px 5px 25px -5px;
 }
+
+.btn-shadow {
+  box-shadow: 0px 0px 15px -5px;
+}
