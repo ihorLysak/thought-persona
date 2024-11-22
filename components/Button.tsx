@@ -1,16 +1,24 @@
-"use client";
-
-import React from "react";
+import clsx from "clsx";
 
 interface Properties {
-  label: string;
+  label?: string | React.ReactNode;
   onClick?: () => void;
+  type?: "black" | "white";
 }
 
-function Button({ label, onClick }: Properties) {
+const blackStyling =
+  "bg-black border-black text-white hover:bg-white hover:text-black";
+
+const whiteStyling =
+  "bg-white border-white text-black hover:border-black hover:bg-black hover:text-white";
+
+function Button({ label, onClick, type = "black" }: Properties) {
   return (
     <button
-      className="transition bg-black border-2 py-1 px-5 border-black text-white text-lg rounded-3xl hover:bg-white hover:text-black"
+      className={clsx(
+        "transition border-2 h-10 py-1 px-5 text-lg rounded-3xl",
+        type === "black" ? blackStyling : whiteStyling
+      )}
       onClick={onClick}
     >
       {label}
