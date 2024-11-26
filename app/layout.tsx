@@ -13,8 +13,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className="flex bg-gradient-to-b from-[#FFB2DF] to-[#FF67C0]">
+    <html className="min-h-full" lang="en">
+      <body className="bg-gradient-to-b from-[#FFB2DF] to-[#FF67C0] min-h-full">
         {children}
       </body>
     </html>
