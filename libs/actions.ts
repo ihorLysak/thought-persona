@@ -15,4 +15,31 @@ async function createThought(text: string, authorId: string) {
   revalidatePath(AppRoute.FEED);
 }
 
-export { createThought };
+async function resolveLike(userId: string, thoughtId: string) {
+  const likesForTargetThought = await prisma.thoughtLikes.findMany({
+    where: {
+      thoughtId,
+    },
+  });
+
+  const targetLike = likesForTargetThought.find(
+    (entry) => entry.userId === userId
+  );
+
+  if (targetLike) {
+    await prisma.thoughtLikes.delete({
+      where: {
+        id: targetLike.id,
+      },
+    });
+  } else {
+    await prisma.thoughtLikes.create({
+      data: {
+        userId,
+        thoughtId,
+      },
+    });
+  }
+}
+
+export { createThought, resolveLike };

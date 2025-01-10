@@ -7,16 +7,16 @@ export async function GET() {
       orderBy: {
         createdAt: "desc",
       },
-      omit: {
-        authorId: true,
-      },
       include: {
         author: true,
+        likes: true,
       },
     });
     return NextResponse.json(thoughts);
-  } catch (error) {
-    console.log("error when fetching thoughts: ", error);
+  } catch (error: unknown) {
+    console.log("--------------------------------------------------");
+    console.log(error);
+    console.log("--------------------------------------------------");
     return NextResponse.json(
       { error: "Internal server error" },
       { status: 500 }
