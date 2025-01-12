@@ -24,7 +24,7 @@ export default function SignIn() {
   };
 
   return (
-    <div className="flex items-center justify-center h-full">
+    <main className="flex items-center justify-center h-full">
       <form
         action={handleSubmit}
         className="flex flex-col gap-4 bg-white p-5 rounded-lg shadow-2xl"
@@ -63,6 +63,6 @@ export default function SignIn() {
         </div>
         <Button label="sign in" />
       </form>
-    </div>
+    </main>
   );
 }

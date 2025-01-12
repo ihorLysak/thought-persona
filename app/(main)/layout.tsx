@@ -4,6 +4,8 @@ import { AppRoute } from "@/libs/enums";
 import { redirect } from "next/navigation";
 import { SessionProvider } from "next-auth/react";
 
+import "@/app/globals.css";
+
 import { Header } from "@/components";
 
 export default async function layout({
