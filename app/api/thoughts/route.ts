@@ -13,10 +13,10 @@ export async function GET() {
       },
     });
     return NextResponse.json(thoughts);
-  } catch (error: unknown) {
-    console.log("--------------------------------------------------");
-    console.log(error);
-    console.log("--------------------------------------------------");
+  } catch (error) {
+    if (error instanceof Error) {
+      console.log("Error: ", error.stack);
+    }
     return NextResponse.json(
       { error: "Internal server error" },
       { status: 500 }
