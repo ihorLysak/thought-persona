@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { signOut } from "next-auth/react";
 import { Settings, LogOut } from "lucide-react";
+import { useSession } from "next-auth/react";
 
 import { Button } from "./Button";
 import { LinkButton } from "./LinkButton";
@@ -15,6 +16,8 @@ function Header() {
     signOut();
   }, []);
 
+  const { data: session } = useSession();
+
   return (
     <div className="flex items-center w-full p-5 justify-between">
       <Link
@@ -24,7 +27,7 @@ function Header() {
         ThoughtPersona
       </Link>
       <div className="flex gap-5">
-        <Link href={AppRoute.PROFILE}>
+        <Link href={`${AppRoute.PROFILE}/${session?.user?.id}`}>
           <div className="h-10 w-10 bg-neutral-500 rounded-full" />
         </Link>
         <LinkButton href={AppRoute.SETTINGS} label={<Settings />} />

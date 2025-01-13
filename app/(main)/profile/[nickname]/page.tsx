@@ -1,14 +1,18 @@
 import React from "react";
 import { auth } from "@/auth";
-import { ThoughtContainer } from "@/components";
 import { Thought } from "@/libs/types";
+import { ThoughtContainer } from "@/components";
 
-export default async function Profile() {
+export default async function Page({
+  params,
+}: {
+  params: Promise<{ nickname: string }>;
+}) {
+  const authorId = (await params).nickname;
+
   const session = await auth();
 
-  const data = await fetch(
-    `http://localhost:3000/api/thoughts/${session?.user?.id}`
-  );
+  const data = await fetch(`http://localhost:3000/api/thoughts/${authorId}`);
 
   const userThoughts = (await data.json()) as Thought[];
 

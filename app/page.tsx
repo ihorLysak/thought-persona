@@ -9,5 +9,11 @@ export default async function page() {
     redirect(AppRoute.SIGN_IN);
   }
 
-  return <div>hello world</div>;
+  return (
+    <html>
+      <body>
+        <div>hello world</div>
+      </body>
+    </html>
+  );
 }

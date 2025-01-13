@@ -14,8 +14,6 @@ export default function LikesWidget({ userId, thought }: Properties) {
   const [isLiked, setIsLiked] = useState<boolean>(initializeIsLiked);
   const [likesCount, setLikesCount] = useState<number>(thought.likes.length);
 
-  console.log(isLiked);
-
   function initializeIsLiked(): boolean {
     return thought.likes.some((like) => like.userId === userId);
   }

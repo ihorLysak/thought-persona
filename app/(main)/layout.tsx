@@ -18,9 +18,13 @@ export default async function layout({
     redirect(AppRoute.SIGN_IN);
   }
   return (
-    <SessionProvider>
-      <Header />
-      {children}
-    </SessionProvider>
+    <html className="min-h-full" lang="en">
+      <body className="flex flex-col min-h-full h-full bg-gradient-to-b from-[#FFB2DF] to-[#FF67C0]">
+        <SessionProvider>
+          <Header />
+          {children}
+        </SessionProvider>
+      </body>
+    </html>
   );
 }
