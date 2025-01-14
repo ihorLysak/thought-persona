@@ -3,7 +3,7 @@ import clsx from "clsx";
 interface Properties {
   label?: string | React.ReactNode;
   onClick?: () => void;
-  type?: "black" | "white";
+  color?: "black" | "white";
 }
 
 const blackStyling =
@@ -12,12 +12,12 @@ const blackStyling =
 const whiteStyling =
   "bg-white border-white text-black hover:border-black hover:bg-black hover:text-white";
 
-function Button({ label, onClick, type = "black" }: Properties) {
+function Button({ label, onClick, color = "black" }: Properties) {
   return (
     <button
       className={clsx(
         "transition border-2 h-10 py-1 px-5 text-lg rounded-3xl",
-        type === "black" ? blackStyling : whiteStyling
+        color === "black" ? blackStyling : whiteStyling
       )}
       onClick={onClick}
     >

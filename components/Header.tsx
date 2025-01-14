@@ -31,7 +31,7 @@ function Header() {
           <div className="h-10 w-10 bg-neutral-500 rounded-full" />
         </Link>
         <LinkButton href={AppRoute.SETTINGS} label={<Settings />} />
-        <Button label={<LogOut />} onClick={handleSignOut} type="white" />
+        <Button label={<LogOut />} onClick={handleSignOut} color="white" />
       </div>
     </div>
   );
