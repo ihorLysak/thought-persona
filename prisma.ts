@@ -9,9 +9,6 @@ export const prisma =
       thought: {
         authorId: true,
       },
-      thoughtLikes: {
-        id: true,
-      },
     },
   });
 

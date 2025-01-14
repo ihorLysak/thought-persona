@@ -1,4 +1,5 @@
 type ThoughtLikes = {
+  id: string;
   userId: string;
   thoughtId: string;
 };

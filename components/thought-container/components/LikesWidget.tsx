@@ -34,6 +34,7 @@ export default function LikesWidget({ userId, thought }: Properties) {
   return (
     <div className="flex gap-1 self-end items-center">
       <Heart
+        className="transition hover:fill-[#f9a8d4]"
         fill={isLiked ? "#f9a8d4" : "#00000000"}
         color="#f9a8d4"
         onClick={handleClick}
