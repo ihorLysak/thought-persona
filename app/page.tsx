@@ -7,6 +7,8 @@ export default async function page() {
   const session = await auth();
   if (!session) {
     redirect(AppRoute.SIGN_IN);
+  } else {
+    redirect(AppRoute.FEED);
   }
 
   return (

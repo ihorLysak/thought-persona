@@ -51,12 +51,14 @@ export const {
     jwt({ token, user }) {
       if (user) {
         token.id = user.id;
+        token.nickname = user.nickname as string;
       }
 
       return token;
     },
     session({ session, token }) {
       session.user.id = token.id as string;
+      session.user.nickname = token.nickname;
       return session;
     },
   },

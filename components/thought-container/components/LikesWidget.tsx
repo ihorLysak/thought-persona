@@ -20,7 +20,6 @@ export default function LikesWidget({ userId, thought }: Properties) {
 
   const handleClick = useCallback(() => {
     resolveLike(userId, thought.id);
-    console.log("clicked");
 
     if (isLiked) {
       setIsLiked(false);
