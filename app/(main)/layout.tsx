@@ -19,7 +19,7 @@ export default async function layout({
   }
   return (
     <html className="min-h-full" lang="en">
-      <body className="flex flex-col min-h-full h-full bg-gradient-to-b from-[#FFB2DF] to-[#FF67C0]">
+      <body className="flex flex-col h-full bg-gradient-to-b from-[#FFB2DF] to-[#FF67C0]">
         <SessionProvider>
           <Header />
           {children}
