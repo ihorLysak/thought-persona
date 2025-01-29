@@ -2,6 +2,8 @@ import { auth } from "@/auth";
 import { ThoughtContainer } from "@/components";
 import { Thought } from "@/libs/types";
 
+export const revalidate = 1200;
+
 export default async function ThoughtsReel() {
   const data = await fetch(`http://localhost:3000/api/thoughts`);
   const thoughts = (await data.json()) as Thought[];
