@@ -2,6 +2,7 @@ import { Suspense } from "react";
 
 import ThoughtInput from "./components/ThoughtInput";
 import ThoughtsReel from "./components/ThoughtsReel";
+import ThoughtsReelFallback from "./components/ThoughtsReelFallback";
 
 export const experimental_ppr = true;
 
@@ -13,7 +14,7 @@ export default async function Feed() {
       </div>
       <div className="flex grow-[2] flex-col gap-5">
         <ThoughtInput />
-        <Suspense fallback={}>
+        <Suspense fallback={<ThoughtsReelFallback />}>
           <ThoughtsReel />
         </Suspense>
       </div>
